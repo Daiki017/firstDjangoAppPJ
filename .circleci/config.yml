@@ -3,9 +3,11 @@ jobs:
   build:
     working_directoyr: ~/firstDjangoAppPJ
     docker:
-      - image: circleci/python:3.6.4
+      - image: circleci/python:3.10.6
     steps:
       - checkout
+      - run:
+          command: pip install --upgrade pip
       - run:
           command: sudo pip install -r requirements.txt
       - run:
